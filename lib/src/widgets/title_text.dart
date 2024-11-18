@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config/fonts.dart';
+import '../core/config/fonts.dart';
 import 'text_stroke.dart';
 
 class TitleText extends StatelessWidget {
@@ -15,6 +15,7 @@ class TitleText extends StatelessWidget {
         title,
         fontSize: 30,
         fontFamily: Fonts.w900,
+        height: 0.8,
       ),
     );
   }

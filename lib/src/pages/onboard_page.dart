@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/config/fonts.dart';
-import '../../core/db/prefs.dart';
-import '../../core/widgets/buttons/cuper_button.dart';
-import '../../core/widgets/buttons/primary_button.dart';
-import '../../core/widgets/custom_scaffold.dart';
-import '../../core/widgets/others/svg_widget.dart';
-import '../../core/widgets/texts/text_stroke.dart';
+import '../core/config/fonts.dart';
+import '../core/db/prefs.dart';
+import '../widgets/cuper_button.dart';
+import '../widgets/primary_button.dart';
+import '../widgets/custom_scaffold.dart';
+import '../widgets/svg_widget.dart';
+import '../widgets/text_stroke.dart';
 
 class OnboardPage extends StatefulWidget {
   const OnboardPage({super.key});

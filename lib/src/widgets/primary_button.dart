@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../config/fonts.dart';
+import '../core/config/fonts.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({

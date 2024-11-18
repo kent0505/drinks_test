@@ -1,5 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
+import '../models/mix_model.dart';
 import '../models/test_model.dart';
 import '../utils.dart';
 import 'prefs.dart';
@@ -7,6 +8,7 @@ import 'prefs.dart';
 String boxName = 'shablonbox';
 String keyName = 'modelsList';
 List<TestModel> modelsList = [];
+List<MixModel> mixesList = [];
 
 Future<void> initDB() async {
   try {

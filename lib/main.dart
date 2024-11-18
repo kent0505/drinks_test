@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'src/core/config/router.dart';
 import 'src/core/config/themes.dart';
 import 'src/blocs/navbar/navbar_bloc.dart';
-import 'src/blocs/test/test_bloc.dart';
+import 'src/blocs/mix/mix_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => NavbarBloc()),
-        BlocProvider(create: (context) => TestBloc()),
+        BlocProvider(create: (context) => MixBloc()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

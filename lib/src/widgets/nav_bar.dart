@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/config/fonts.dart';
-import '../../../core/widgets/others/svg_widget.dart';
-import '../../../core/widgets/buttons/cuper_button.dart';
-import '../../../blocs/navbar/navbar_bloc.dart';
+import '../core/config/fonts.dart';
+import 'svg_widget.dart';
+import 'cuper_button.dart';
+import '../blocs/navbar/navbar_bloc.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});

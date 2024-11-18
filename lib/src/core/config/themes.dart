@@ -15,10 +15,5 @@ const cupertinoTheme = CupertinoThemeData(
       fontFamily: Fonts.w400,
       color: Colors.black,
     ),
-    // dateTimePickerTextStyle: TextStyle(
-    //   color: AppColors.white,
-    //   fontSize: 24,
-    //   fontFamily: Fonts.medium,
-    // ),
   ),
 );

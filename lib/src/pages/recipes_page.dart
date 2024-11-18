@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/utils.dart';
-import '../../../core/widgets/texts/text_stroke.dart';
+import '../core/utils.dart';
+import '../widgets/text_stroke.dart';
 import '../widgets/recipe_card.dart';
 
 class RecipesPage extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'others/rotated_widget.dart';
+import 'rotated_widget.dart';
 
 class CustomScaffold extends StatelessWidget {
   const CustomScaffold({

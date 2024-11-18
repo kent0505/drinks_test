@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../config/themes.dart';
+import '../core/config/themes.dart';
 
 class CuperButton extends StatelessWidget {
   const CuperButton({

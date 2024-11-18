@@ -1,7 +1,7 @@
-import 'package:drinks_test/src/core/widgets/texts/title_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/utils.dart';
+import '../core/utils.dart';
+import '../widgets/title_text.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});

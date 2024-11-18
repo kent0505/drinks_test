@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config/fonts.dart';
+import '../core/config/fonts.dart';
 
 class TextStroke extends StatelessWidget {
   const TextStroke(
