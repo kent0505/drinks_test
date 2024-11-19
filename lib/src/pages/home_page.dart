@@ -18,19 +18,22 @@ class HomePage extends StatelessWidget {
     return CustomScaffold(
       body: Stack(
         children: [
-          BlocConsumer<NavbarBloc, NavbarState>(
-            listener: (context, state) {
-              logger(state.runtimeType);
-            },
-            builder: (context, state) {
-              if (state is NavbarMix) return const MixPage();
+          Padding(
+            padding: const EdgeInsets.only(bottom: 76),
+            child: BlocConsumer<NavbarBloc, NavbarState>(
+              listener: (context, state) {
+                logger(state.runtimeType);
+              },
+              builder: (context, state) {
+                if (state is NavbarMix) return const MixPage();
 
-              if (state is NavbarHistory) return const HistoryPage();
+                if (state is NavbarHistory) return const HistoryPage();
 
-              if (state is NavbarSettings) return const SettingsPage();
+                if (state is NavbarSettings) return const SettingsPage();
 
-              return const RecipesPage();
-            },
+                return const RecipesPage();
+              },
+            ),
           ),
           const NavBar(),
         ],

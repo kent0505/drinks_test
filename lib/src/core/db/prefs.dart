@@ -8,7 +8,7 @@ Future<void> getData() async {
   try {
     final prefs = await SharedPreferences.getInstance();
     // await prefs.remove('onboard');
-    await prefs.clear();
+    // await prefs.clear();
     onboard = prefs.getBool('onboard') ?? true;
   } catch (e) {
     logger(e);

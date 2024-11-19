@@ -88,9 +88,11 @@ class _Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CuperButton(
-      onPressed: () {
-        if (!active) context.read<NavbarBloc>().add(ChangePageEvent(index: id));
-      },
+      onPressed: active
+          ? null
+          : () {
+              context.read<NavbarBloc>().add(ChangePageEvent(index: id));
+            },
       padding: 0,
       child: SizedBox(
         width: 62,

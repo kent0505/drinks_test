@@ -28,7 +28,6 @@ class RecipesPage extends StatelessWidget {
             return const RecipeCard();
           },
         ),
-        const SizedBox(height: 100),
       ],
     );
   }
