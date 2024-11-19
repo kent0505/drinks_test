@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -6,6 +8,7 @@ import '../blocs/navbar/navbar_bloc.dart';
 import '../core/config/fonts.dart';
 import '../core/models/ingredient.dart';
 import '../core/models/mix_model.dart';
+import '../core/models/recipe.dart';
 import '../core/utils.dart';
 import '../widgets/cuper_button.dart';
 import '../widgets/mix_button.dart';
@@ -48,7 +51,17 @@ class _MixPageState extends State<MixPage> {
     logger(selectedList);
   }
 
-  void onRandom() {}
+  void onRandom() {
+    List<String> all = current == 'All'
+        ? ingredientsList.expand((ingredient) => ingredient.children).toList()
+        : currentIngredient.children;
+    all.shuffle(Random());
+    int count =
+        current == 'All' ? Random().nextInt(3) + 3 : Random().nextInt(2) + 2;
+    selectedList = all.take(count).toList();
+    logger(selectedList);
+    setState(() {});
+  }
 
   void onReset() {
     setState(() {
@@ -58,12 +71,13 @@ class _MixPageState extends State<MixPage> {
 
   void onMix() {
     if (selectedList.isEmpty) return;
+    Recipe recipe = cocktailRecipes[Random().nextInt(ingredientsList.length)];
     context.read<MixBloc>().add(
           AddMixEvent(
             mix: MixModel(
-              id: 1,
               date: getTimestamp(),
-              title: 'Margarita',
+              id: recipe.id,
+              title: recipe.title,
               ingredients: selectedList,
             ),
           ),
@@ -142,7 +156,7 @@ class _MixPageState extends State<MixPage> {
                   ),
                 ],
               ),
-            const SizedBox(height: 33),
+            const SizedBox(height: 100),
           ],
         ),
         Align(

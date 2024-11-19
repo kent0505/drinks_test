@@ -9,18 +9,22 @@ class MixButton extends StatelessWidget {
     required this.title,
     required this.current,
     required this.onPressed,
+    this.readOnly = false,
   });
 
   final String title;
   final String current;
+  final bool readOnly;
   final void Function(String) onPressed;
 
   @override
   Widget build(BuildContext context) {
     return CuperButton(
-      onPressed: () {
-        onPressed(title);
-      },
+      onPressed: readOnly
+          ? null
+          : () {
+              onPressed(title);
+            },
       minSize: 40,
       child: Container(
         height: 40,

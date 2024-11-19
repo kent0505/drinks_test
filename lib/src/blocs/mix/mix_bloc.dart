@@ -31,7 +31,6 @@ class MixBloc extends Bloc<MixEvent, MixState> {
     Emitter<MixState> emit,
   ) async {
     mixesList.insert(0, event.mix);
-    // mixesList.add(event.mix);
     await updateModels();
     emit(MixLoadedState(mixes: mixesList));
   }

@@ -6,12 +6,10 @@ import 'cuper_button.dart';
 class DeleteDialog extends StatelessWidget {
   const DeleteDialog({
     super.key,
-    required this.title,
-    required this.onYes,
+    required this.onDelete,
   });
 
-  final String title;
-  final void Function() onYes;
+  final void Function() onDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +31,9 @@ class DeleteDialog extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 20),
-            Text(
-              title,
-              style: const TextStyle(
+            const Text(
+              'Delete?',
+              style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
                 fontFamily: Fonts.w900,
@@ -56,7 +54,7 @@ class DeleteDialog extends StatelessWidget {
                   title: 'Yes',
                   onPressed: () {
                     Navigator.pop(context);
-                    onYes();
+                    onDelete();
                   },
                 ),
                 const SizedBox(width: 20),
