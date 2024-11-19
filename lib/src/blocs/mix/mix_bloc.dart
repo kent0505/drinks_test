@@ -13,7 +13,6 @@ class MixBloc extends Bloc<MixEvent, MixState> {
       (event, emit) => switch (event) {
         GetMixEvent() => _getMix(event, emit),
         AddMixEvent() => _addMix(event, emit),
-        EditMixEvent() => _editMix(event, emit),
         DeleteMixEvent() => _deleteMix(event, emit),
       },
     );
@@ -31,21 +30,8 @@ class MixBloc extends Bloc<MixEvent, MixState> {
     AddMixEvent event,
     Emitter<MixState> emit,
   ) async {
-    // modelsList.insert(0, event.model);
-    // modelsList.add(event.model);
-    await updateModels();
-    emit(MixLoadedState(mixes: mixesList));
-  }
-
-  void _editMix(
-    EditMixEvent event,
-    Emitter<MixState> emit,
-  ) async {
-    // for (MixModel model in mixesList) {
-    // if (identical(model, event.model)) {
-    //   model.title = event.model.title;
-    // }
-    // }
+    mixesList.insert(0, event.mix);
+    // mixesList.add(event.mix);
     await updateModels();
     emit(MixLoadedState(mixes: mixesList));
   }
@@ -54,7 +40,7 @@ class MixBloc extends Bloc<MixEvent, MixState> {
     DeleteMixEvent event,
     Emitter<MixState> emit,
   ) async {
-    // modelsList.removeWhere((model) => identical(model, event.model));
+    mixesList.removeWhere((model) => identical(model, event.mix));
     await updateModels();
     emit(MixLoadedState(mixes: mixesList));
   }

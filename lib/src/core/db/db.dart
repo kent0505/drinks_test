@@ -1,13 +1,11 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '../models/mix_model.dart';
-import '../models/test_model.dart';
 import '../utils.dart';
 import 'prefs.dart';
 
-String boxName = 'shablonbox';
-String keyName = 'modelsList';
-List<TestModel> modelsList = [];
+String boxName = 'drinks_test_box';
+String keyName = 'drinks_test_models';
 List<MixModel> mixesList = [];
 
 Future<void> initDB() async {
@@ -15,7 +13,7 @@ Future<void> initDB() async {
     await Hive.initFlutter();
     await getData();
     // await Hive.deleteBoxFromDisk(DB.boxName);
-    Hive.registerAdapter(TestModelAdapter());
+    Hive.registerAdapter(MixModelAdapter());
   } catch (e) {
     logger(e);
   }
@@ -25,8 +23,8 @@ Future<void> getModels() async {
   try {
     final box = await Hive.openBox(boxName);
     List data = box.get(keyName) ?? [];
-    modelsList = data.cast<TestModel>();
-    logger(modelsList.length);
+    mixesList = data.cast<MixModel>();
+    logger(mixesList.length);
   } catch (e) {
     logger(e);
   }
@@ -35,8 +33,8 @@ Future<void> getModels() async {
 Future<void> updateModels() async {
   try {
     final box = await Hive.openBox(boxName);
-    box.put(keyName, modelsList);
-    modelsList = await box.get(keyName);
+    box.put(keyName, mixesList);
+    mixesList = await box.get(keyName);
   } catch (e) {
     logger(e);
   }

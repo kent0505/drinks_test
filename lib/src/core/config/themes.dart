@@ -7,6 +7,11 @@ final theme = ThemeData(
   useMaterial3: false,
   primarySwatch: Colors.grey,
   fontFamily: Fonts.w400,
+  dialogTheme: DialogTheme(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
+    ),
+  ),
 );
 
 const cupertinoTheme = CupertinoThemeData(

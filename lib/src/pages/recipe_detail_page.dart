@@ -51,17 +51,14 @@ class RecipeDetailPage extends StatelessWidget {
                         height: 255,
                       ),
                     ),
-                    BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
-                      child: Positioned(
-                        top: -100,
-                        left: -100,
-                        child: RotatedWidget(
-                          degree: 22,
-                          child: Image.asset(
-                            'assets/bg1.png',
-                            height: 455,
-                          ),
+                    Positioned(
+                      top: -100,
+                      left: -100,
+                      child: RotatedWidget(
+                        degree: 22,
+                        child: Image.asset(
+                          'assets/bg1.png',
+                          height: 455,
                         ),
                       ),
                     ),
@@ -82,7 +79,7 @@ class RecipeDetailPage extends StatelessWidget {
                           const Spacer(),
                           SvgWidget(
                             'assets/glass${recipe.id}.svg',
-                            width: 100,
+                            height: 160,
                           ),
                           const SizedBox(height: 20),
                           Container(

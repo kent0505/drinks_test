@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../core/config/fonts.dart';
 import '../core/models/recipe.dart';
+import 'arrow_right.dart';
 import 'cuper_button.dart';
 import 'custom_container.dart';
 import 'svg_widget.dart';
@@ -101,14 +102,7 @@ class RecipeCard extends StatelessWidget {
                     child: SvgWidget('assets/glass${recipe.id}.svg'),
                   ),
                   const SizedBox(height: 10),
-                  Container(
-                    height: 26,
-                    width: 54,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(26),
-                    ),
-                  ),
+                  const ArrowRight(),
                   const SizedBox(height: 12),
                 ],
               ),
