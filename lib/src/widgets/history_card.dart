@@ -116,6 +116,13 @@ class _HistoryCardState extends State<HistoryCard>
                     TextStroke(
                       widget.model.title,
                       borderColor: const Color(0xffA22AD5),
+                      shadows: const [
+                        BoxShadow(
+                          color: Color(0xffB300FF),
+                          blurRadius: 22,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 4),
                     Row(

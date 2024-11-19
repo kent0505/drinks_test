@@ -6,8 +6,10 @@ import 'src/core/config/router.dart';
 import 'src/core/config/themes.dart';
 import 'src/blocs/navbar/navbar_bloc.dart';
 import 'src/blocs/mix/mix_bloc.dart';
+import 'src/core/utils.dart';
 
 Future<void> main() async {
+  await initializeDb();
   WidgetsFlutterBinding.ensureInitialized();
 
   await SystemChrome.setPreferredOrientations([

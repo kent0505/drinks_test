@@ -18,10 +18,9 @@ class OnboardPage extends StatefulWidget {
 
 class _OnboardPageState extends State<OnboardPage> {
   void onStart() async {
-    SharedPreferences.getInstance().then((prefs) {
-      prefs.setBool('onboard', false);
-    });
-    context.go('/home');
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('onboard', false);
+    if (mounted) context.go('/home');
   }
 
   @override

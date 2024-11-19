@@ -22,6 +22,7 @@ class MixBloc extends Bloc<MixEvent, MixState> {
     GetMixEvent event,
     Emitter<MixState> emit,
   ) async {
+    logger('GET');
     await getMixes();
     emit(MixLoadedState(mixes: mixesList));
   }

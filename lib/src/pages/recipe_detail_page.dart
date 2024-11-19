@@ -1,16 +1,15 @@
-import 'dart:ui';
-
-import 'package:drinks_test/src/widgets/custom_container.dart';
-import 'package:drinks_test/src/widgets/rotated_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/config/fonts.dart';
 import '../core/models/recipe.dart';
 import '../core/utils.dart';
+import '../widgets/custom_container.dart';
+import '../widgets/like_button.dart';
 import '../widgets/my_button.dart';
 import '../widgets/my_scaffold.dart';
 import '../widgets/my_svg_widget.dart';
+import '../widgets/rotated_widget.dart';
 import '../widgets/title_txt.dart';
 
 class RecipeDetailPage extends StatelessWidget {
@@ -147,6 +146,11 @@ class RecipeDetailPage extends StatelessWidget {
                           fontFamily: Fonts.w700,
                         ),
                       ),
+                      const Spacer(),
+                      const LikeButton(like: true),
+                      const SizedBox(width: 20),
+                      const LikeButton(like: false),
+                      const SizedBox(width: 20),
                     ],
                   ),
                 ),

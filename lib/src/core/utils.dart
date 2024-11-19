@@ -25,12 +25,10 @@ bool onboard = true;
 
 Future<void> initializeDb() async {
   await Hive.initFlutter();
-  await SharedPreferences.getInstance().then((prefs) async {
-    await prefs.clear();
-    onboard = prefs.getBool('onboard') ?? true;
-  });
-
   Hive.registerAdapter(MixModelAdapter());
+  final prefs = await SharedPreferences.getInstance();
+  // await prefs.clear();
+  onboard = prefs.getBool('onboard') ?? true;
 }
 
 Future getMixes() async {

@@ -14,18 +14,16 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  void init() async {
-    await initializeDb().then((_) {
-      Future.delayed(const Duration(seconds: 2), () {
-        if (mounted) {
-          context.read<MixBloc>().add(GetMixEvent());
-          if (onboard) {
-            context.go('/onboard');
-          } else {
-            context.go('/home');
-          }
+  void init() {
+    context.read<MixBloc>().add(GetMixEvent());
+    Future.delayed(const Duration(seconds: 2), () {
+      if (mounted) {
+        if (onboard) {
+          context.go('/onboard');
+        } else {
+          context.go('/home');
         }
-      });
+      }
     });
   }
 

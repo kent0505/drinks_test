@@ -35,6 +35,19 @@ class MyScaffold extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            bottom: -150,
+            right: -150,
+            child: RotatedWidget(
+              degree: 5,
+              child: Image.asset(
+                'assets/bg1.png',
+                height: 636,
+                width: 636,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
           Container(
             height: double.infinity,
             width: double.infinity,
