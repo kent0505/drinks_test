@@ -49,6 +49,7 @@ class RecipeDetailPage extends StatelessWidget {
                         'assets/bg3.jpg',
                         fit: BoxFit.cover,
                         height: 255,
+                        width: double.infinity,
                       ),
                     ),
                     Positioned(
@@ -82,30 +83,36 @@ class RecipeDetailPage extends StatelessWidget {
                             height: 160,
                           ),
                           const SizedBox(height: 20),
-                          Container(
-                            height: 38,
-                            width: 133,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.8),
-                                  blurRadius: 4,
-                                  offset: const Offset(0, 4),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 38,
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.8),
+                                      blurRadius: 4,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                            child: Center(
-                              child: Text(
-                                recipe.title,
-                                style: const TextStyle(
-                                  color: Color(0xffD13535),
-                                  fontSize: 20,
-                                  fontFamily: Fonts.w700,
+                                child: Center(
+                                  child: Text(
+                                    recipe.title,
+                                    style: const TextStyle(
+                                      color: Color(0xffD13535),
+                                      fontSize: 20,
+                                      fontFamily: Fonts.w700,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
+                            ],
                           ),
                           const Spacer(),
                         ],
@@ -186,7 +193,7 @@ class RecipeDetailPage extends StatelessWidget {
             ],
           ),
           Positioned(
-            top: 20 + statusBar(context),
+            top: 11 + statusBar(context),
             left: 24,
             child: MyButton(
               onPressed: () {

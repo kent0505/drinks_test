@@ -25,7 +25,8 @@ bool onboard = true;
 
 Future<void> initializeDb() async {
   await Hive.initFlutter();
-  await SharedPreferences.getInstance().then((prefs) {
+  await SharedPreferences.getInstance().then((prefs) async {
+    await prefs.clear();
     onboard = prefs.getBool('onboard') ?? true;
   });
 

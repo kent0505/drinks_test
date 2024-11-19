@@ -16,7 +16,8 @@ class DeleteDialog extends StatelessWidget {
     return Dialog(
       backgroundColor: const Color(0xff000D99),
       child: Container(
-        height: 150,
+        height: 200,
+        width: 200,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           gradient: const LinearGradient(

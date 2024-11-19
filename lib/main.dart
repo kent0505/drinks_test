@@ -9,10 +9,12 @@ import 'src/blocs/mix/mix_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+
   runApp(const MyApp());
 }
 
@@ -22,7 +24,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     precacheImage(const AssetImage('assets/bg1.png'), context);
+
     precacheImage(const AssetImage('assets/bg2.jpg'), context);
+
     precacheImage(const AssetImage('assets/bg3.jpg'), context);
 
     return MultiBlocProvider(
@@ -31,9 +35,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => MixBloc()),
       ],
       child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        theme: theme,
         routerConfig: routerConfig,
+        theme: theme,
+        debugShowCheckedModeBanner: false,
       ),
     );
   }
