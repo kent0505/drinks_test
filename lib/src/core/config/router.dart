@@ -2,7 +2,9 @@ import 'package:go_router/go_router.dart';
 
 import '../../pages/home_page.dart';
 import '../../pages/onboard_page.dart';
+import '../../pages/recipe_detail_page.dart';
 import '../../pages/splash_page.dart';
+import '../models/recipe.dart';
 
 final routerConfig = GoRouter(
   initialLocation: '/',
@@ -18,6 +20,12 @@ final routerConfig = GoRouter(
     GoRoute(
       path: '/home',
       builder: (context, state) => const HomePage(),
+    ),
+    GoRoute(
+      path: '/recipe',
+      builder: (context, state) => RecipeDetailPage(
+        recipe: state.extra as Recipe,
+      ),
     ),
   ],
 );

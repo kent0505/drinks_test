@@ -4,12 +4,14 @@ class CustomContainer extends StatelessWidget {
   const CustomContainer({
     super.key,
     this.height,
+    this.padding = 0,
     this.horizontal = 0,
     required this.borderRadius,
     required this.child,
   });
 
   final double? height;
+  final double padding;
   final double horizontal;
   final double borderRadius;
   final Widget child;
@@ -18,11 +20,13 @@ class CustomContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: height,
+      width: double.infinity,
       margin: EdgeInsets.only(
         bottom: 16,
         left: horizontal,
         right: horizontal,
       ),
+      padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius),
         border: Border.all(

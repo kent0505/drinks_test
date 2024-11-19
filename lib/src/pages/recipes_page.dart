@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../core/models/recipe.dart';
 import '../core/utils.dart';
 import '../widgets/text_stroke.dart';
 import '../widgets/recipe_card.dart';
@@ -23,9 +24,9 @@ class RecipesPage extends StatelessWidget {
         // search
         const SizedBox(height: 16),
         ...List.generate(
-          10,
+          cocktailRecipes.length,
           (index) {
-            return const RecipeCard();
+            return RecipeCard(recipe: cocktailRecipes[index]);
           },
         ),
       ],
