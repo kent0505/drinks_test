@@ -10,10 +10,10 @@ import '../core/models/ingredient.dart';
 import '../core/models/mix_model.dart';
 import '../core/models/recipe.dart';
 import '../core/utils.dart';
-import '../widgets/cuper_button.dart';
+import '../widgets/my_button.dart';
 import '../widgets/mix_button.dart';
 import '../widgets/text_stroke.dart';
-import '../widgets/title_text.dart';
+import '../widgets/title_txt.dart';
 
 class MixPage extends StatefulWidget {
   const MixPage({super.key});
@@ -98,8 +98,8 @@ class _MixPageState extends State<MixPage> {
         ListView(
           padding: EdgeInsets.zero,
           children: [
-            SizedBox(height: 20 + getStatusBar(context)),
-            const TitleText('CREATE YOUR\nOWN COCTAIL'),
+            SizedBox(height: 20 + statusBar(context)),
+            const TitleTxt('CREATE YOUR\nOWN COCTAIL'),
             const SizedBox(height: 20),
             SizedBox(
               height: 40,
@@ -272,7 +272,7 @@ class _Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: CuperButton(
+      child: MyButton(
         onPressed: onPressed,
         child: Container(
           height: 44,

@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 
 import '../core/config/themes.dart';
 
-class CuperButton extends StatelessWidget {
-  const CuperButton({
+class MyButton extends StatelessWidget {
+  const MyButton({
     super.key,
     this.onPressed,
     this.padding = 0,

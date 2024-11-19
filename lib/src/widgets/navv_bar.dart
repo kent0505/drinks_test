@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../core/config/fonts.dart';
-import 'svg_widget.dart';
-import 'cuper_button.dart';
+import 'my_svg_widget.dart';
+import 'my_button.dart';
 import '../blocs/navbar/navbar_bloc.dart';
 
-class NavBar extends StatelessWidget {
-  const NavBar({super.key});
+class NavvBar extends StatelessWidget {
+  const NavvBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class _Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CuperButton(
+    return MyButton(
       onPressed: active
           ? null
           : () {
@@ -104,12 +104,12 @@ class _Button extends StatelessWidget {
               width: 58,
               child: Stack(
                 children: [
-                  if (active) const SvgWidget('assets/tab_active.svg'),
+                  if (active) const MySvgWidget('assets/tab_active.svg'),
                   Center(
                     child: Column(
                       children: [
                         const SizedBox(height: 8),
-                        SvgWidget('assets/tab$id.svg'),
+                        MySvgWidget('assets/tab$id.svg'),
                         const SizedBox(height: 6),
                         Text(
                           title,

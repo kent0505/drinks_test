@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../core/db/db.dart';
 import '../../core/models/mix_model.dart';
+import '../../core/utils.dart';
 
 part 'mix_event.dart';
 part 'mix_state.dart';
@@ -13,7 +13,7 @@ class MixBloc extends Bloc<MixEvent, MixState> {
       (event, emit) => switch (event) {
         GetMixEvent() => _getMix(event, emit),
         AddMixEvent() => _addMix(event, emit),
-        DeleteMixEvent() => _deleteMix(event, emit),
+        DelMixEvent() => _delMix(event, emit),
       },
     );
   }
@@ -22,7 +22,7 @@ class MixBloc extends Bloc<MixEvent, MixState> {
     GetMixEvent event,
     Emitter<MixState> emit,
   ) async {
-    await getModels();
+    await getMixes();
     emit(MixLoadedState(mixes: mixesList));
   }
 
@@ -31,16 +31,16 @@ class MixBloc extends Bloc<MixEvent, MixState> {
     Emitter<MixState> emit,
   ) async {
     mixesList.insert(0, event.mix);
-    await updateModels();
+    await updateMixes();
     emit(MixLoadedState(mixes: mixesList));
   }
 
-  void _deleteMix(
-    DeleteMixEvent event,
+  void _delMix(
+    DelMixEvent event,
     Emitter<MixState> emit,
   ) async {
-    mixesList.removeWhere((model) => identical(model, event.mix));
-    await updateModels();
+    mixesList.removeWhere((mix) => identical(mix, event.mix));
+    await updateMixes();
     emit(MixLoadedState(mixes: mixesList));
   }
 }

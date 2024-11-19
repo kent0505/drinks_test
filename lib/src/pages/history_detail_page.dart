@@ -3,11 +3,11 @@ import 'package:go_router/go_router.dart';
 
 import '../core/models/mix_model.dart';
 import '../core/utils.dart';
-import '../widgets/cuper_button.dart';
-import '../widgets/custom_scaffold.dart';
+import '../widgets/my_button.dart';
+import '../widgets/my_scaffold.dart';
 import '../widgets/mix_button.dart';
-import '../widgets/svg_widget.dart';
-import '../widgets/title_text.dart';
+import '../widgets/my_svg_widget.dart';
+import '../widgets/title_txt.dart';
 
 class HistoryDetailPage extends StatefulWidget {
   const HistoryDetailPage({
@@ -30,14 +30,14 @@ class _HistoryDetailPageState extends State<HistoryDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
+    return MyScaffold(
       body: Stack(
         children: [
           ListView(
             padding: EdgeInsets.zero,
             children: [
-              SizedBox(height: 20 + getStatusBar(context)),
-              TitleText(widget.mixModel.title.toUpperCase()),
+              SizedBox(height: 20 + statusBar(context)),
+              TitleTxt(widget.mixModel.title.toUpperCase()),
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -60,14 +60,14 @@ class _HistoryDetailPageState extends State<HistoryDetailPage> {
             ],
           ),
           Positioned(
-            top: 11 + getStatusBar(context),
+            top: 11 + statusBar(context),
             left: 24,
-            child: CuperButton(
+            child: MyButton(
               onPressed: () {
                 context.pop();
               },
               minSize: 34,
-              child: const SvgWidget('assets/back.svg'),
+              child: const MySvgWidget('assets/back.svg'),
             ),
           ),
         ],

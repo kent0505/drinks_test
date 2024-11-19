@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../core/config/fonts.dart';
 import '../core/utils.dart';
-import '../widgets/cuper_button.dart';
+import '../widgets/my_button.dart';
 import '../widgets/custom_container.dart';
-import '../widgets/svg_widget.dart';
-import '../widgets/title_text.dart';
+import '../widgets/my_svg_widget.dart';
+import '../widgets/title_txt.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -14,8 +14,8 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 20 + getStatusBar(context)),
-        const TitleText('SETTINGS'),
+        SizedBox(height: 20 + statusBar(context)),
+        const TitleTxt('SETTINGS'),
         const Spacer(),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 24),
@@ -50,14 +50,14 @@ class _Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CuperButton(
+    return MyButton(
       onPressed: () {},
       child: SizedBox(
         height: 56,
         child: Row(
           children: [
             const SizedBox(width: 20),
-            SvgWidget('assets/set$id.svg'),
+            MySvgWidget('assets/set$id.svg'),
             const SizedBox(width: 14),
             Expanded(
               child: Text(

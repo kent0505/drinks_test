@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../core/utils.dart';
 import '../blocs/navbar/navbar_bloc.dart';
-import '../widgets/custom_scaffold.dart';
-import '../widgets/nav_bar.dart';
+import '../widgets/my_scaffold.dart';
+import '../widgets/navv_bar.dart';
 import 'history_page.dart';
 import 'recipes_page.dart';
 import 'mix_page.dart';
@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
+    return MyScaffold(
       body: Stack(
         children: [
           Padding(
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
               },
             ),
           ),
-          const NavBar(),
+          const NavvBar(),
         ],
       ),
     );

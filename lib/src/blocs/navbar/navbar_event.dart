@@ -5,6 +5,5 @@ sealed class NavbarEvent {}
 
 class ChangePageEvent extends NavbarEvent {
   ChangePageEvent({required this.index});
-
   final int index;
 }

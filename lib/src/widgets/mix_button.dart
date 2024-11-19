@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/config/fonts.dart';
-import 'cuper_button.dart';
+import 'my_button.dart';
 
 class MixButton extends StatelessWidget {
   const MixButton({
@@ -19,7 +19,7 @@ class MixButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CuperButton(
+    return MyButton(
       onPressed: readOnly
           ? null
           : () {

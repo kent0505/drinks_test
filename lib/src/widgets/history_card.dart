@@ -8,10 +8,10 @@ import '../core/config/fonts.dart';
 import '../core/models/mix_model.dart';
 import '../core/utils.dart';
 import 'arrow_right.dart';
-import 'cuper_button.dart';
+import 'my_button.dart';
 import 'custom_container.dart';
 import 'delete_dialog.dart';
-import 'svg_widget.dart';
+import 'my_svg_widget.dart';
 import 'text_stroke.dart';
 
 class HistoryCard extends StatefulWidget {
@@ -58,7 +58,7 @@ class _HistoryCardState extends State<HistoryCard>
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(height: 16),
-              CuperButton(
+              MyButton(
                 onPressed: () {
                   showDialog(
                     context: context,
@@ -67,7 +67,7 @@ class _HistoryCardState extends State<HistoryCard>
                         onDelete: () {
                           context
                               .read<MixBloc>()
-                              .add(DeleteMixEvent(mix: widget.model));
+                              .add(DelMixEvent(mix: widget.model));
                           slidableController.close();
                         },
                       );
@@ -83,7 +83,7 @@ class _HistoryCardState extends State<HistoryCard>
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: const Center(
-                    child: SvgWidget('assets/delete.svg'),
+                    child: MySvgWidget('assets/delete.svg'),
                   ),
                 ),
               ),
@@ -95,7 +95,7 @@ class _HistoryCardState extends State<HistoryCard>
         height: 82,
         horizontal: 24,
         borderRadius: 36,
-        child: CuperButton(
+        child: MyButton(
           onPressed: () {
             context.push('/history', extra: widget.model);
           },
@@ -106,7 +106,7 @@ class _HistoryCardState extends State<HistoryCard>
                 width: 54,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 14),
-                  child: SvgWidget('assets/glass${widget.model.id}.svg'),
+                  child: MySvgWidget('assets/glass${widget.model.id}.svg'),
                 ),
               ),
               Expanded(
@@ -121,7 +121,7 @@ class _HistoryCardState extends State<HistoryCard>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const SvgWidget('assets/clock.svg'),
+                        const MySvgWidget('assets/clock.svg'),
                         const SizedBox(width: 8),
                         Text(
                           formatTimestamp(widget.model.date),

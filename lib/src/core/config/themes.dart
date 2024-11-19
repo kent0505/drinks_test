@@ -5,20 +5,12 @@ import 'fonts.dart';
 
 final theme = ThemeData(
   useMaterial3: false,
-  primarySwatch: Colors.grey,
   fontFamily: Fonts.w400,
   dialogTheme: DialogTheme(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(12),
-    ),
-  ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
 );
 
 const cupertinoTheme = CupertinoThemeData(
   textTheme: CupertinoTextThemeData(
-    textStyle: TextStyle(
-      fontFamily: Fonts.w400,
-      color: Colors.black,
-    ),
-  ),
+      textStyle: TextStyle(fontFamily: Fonts.w400, color: Colors.black)),
 );

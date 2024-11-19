@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../core/config/fonts.dart';
 import 'text_stroke.dart';
 
-class TitleText extends StatelessWidget {
-  const TitleText(this.title, {super.key});
+class TitleTxt extends StatelessWidget {
+  const TitleTxt(this.title, {super.key});
 
   final String title;
 

@@ -7,6 +7,5 @@ final class MixInitial extends MixState {}
 
 final class MixLoadedState extends MixState {
   MixLoadedState({required this.mixes});
-
   final List<MixModel> mixes;
 }

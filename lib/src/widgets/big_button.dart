@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../core/config/fonts.dart';
 
-class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({
+class BigButton extends StatelessWidget {
+  const BigButton({
     super.key,
     required this.title,
     this.width,

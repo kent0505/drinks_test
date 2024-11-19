@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../blocs/mix/mix_bloc.dart';
 import '../core/utils.dart';
 import '../widgets/history_card.dart';
-import '../widgets/title_text.dart';
+import '../widgets/title_txt.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({super.key});
@@ -17,8 +17,8 @@ class HistoryPage extends StatelessWidget {
           return ListView(
             padding: EdgeInsets.zero,
             children: [
-              SizedBox(height: 20 + getStatusBar(context)),
-              const TitleText('HISTORY'),
+              SizedBox(height: 20 + statusBar(context)),
+              const TitleTxt('HISTORY'),
               const SizedBox(height: 40),
               ...List.generate(
                 state.mixes.length,

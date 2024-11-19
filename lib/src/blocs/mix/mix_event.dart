@@ -7,12 +7,10 @@ class GetMixEvent extends MixEvent {}
 
 class AddMixEvent extends MixEvent {
   AddMixEvent({required this.mix});
-
   final MixModel mix;
 }
 
-class DeleteMixEvent extends MixEvent {
-  DeleteMixEvent({required this.mix});
-
+class DelMixEvent extends MixEvent {
+  DelMixEvent({required this.mix});
   final MixModel mix;
 }

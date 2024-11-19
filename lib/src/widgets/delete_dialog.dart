@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/config/fonts.dart';
-import 'cuper_button.dart';
+import 'my_button.dart';
 
 class DeleteDialog extends StatelessWidget {
   const DeleteDialog({
@@ -79,7 +79,7 @@ class _Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CuperButton(
+    return MyButton(
       padding: 0,
       onPressed: onPressed,
       child: Row(

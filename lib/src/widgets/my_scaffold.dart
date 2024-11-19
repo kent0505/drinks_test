@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'rotated_widget.dart';
 
-class CustomScaffold extends StatelessWidget {
-  const CustomScaffold({
+class MyScaffold extends StatelessWidget {
+  const MyScaffold({
     super.key,
     required this.body,
   });
@@ -13,6 +13,7 @@ class CustomScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           Image.asset(

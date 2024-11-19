@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../core/config/fonts.dart';
-import '../core/db/prefs.dart';
-import '../widgets/cuper_button.dart';
-import '../widgets/primary_button.dart';
-import '../widgets/custom_scaffold.dart';
-import '../widgets/svg_widget.dart';
+import '../widgets/my_button.dart';
+import '../widgets/big_button.dart';
+import '../widgets/my_scaffold.dart';
+import '../widgets/my_svg_widget.dart';
 import '../widgets/text_stroke.dart';
 
 class OnboardPage extends StatefulWidget {
@@ -17,20 +17,22 @@ class OnboardPage extends StatefulWidget {
 }
 
 class _OnboardPageState extends State<OnboardPage> {
-  void onStart() {
-    saveOnboard();
+  void onStart() async {
+    SharedPreferences.getInstance().then((prefs) {
+      prefs.setBool('onboard', false);
+    });
     context.go('/home');
   }
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
+    return MyScaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
             const Spacer(),
-            const SvgWidget('assets/onboard.svg'),
+            const MySvgWidget('assets/onboard.svg'),
             const SizedBox(height: 40),
             const Row(
               children: [
@@ -50,12 +52,12 @@ class _OnboardPageState extends State<OnboardPage> {
               ),
             ),
             const SizedBox(height: 24),
-            PrimaryButton(
+            BigButton(
               title: 'Start',
               onPressed: onStart,
             ),
             const SizedBox(height: 24),
-            CuperButton(
+            MyButton(
               onPressed: () {},
               minSize: 20,
               child: Text(

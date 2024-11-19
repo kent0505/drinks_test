@@ -8,10 +8,10 @@ import 'package:go_router/go_router.dart';
 import '../core/config/fonts.dart';
 import '../core/models/recipe.dart';
 import '../core/utils.dart';
-import '../widgets/cuper_button.dart';
-import '../widgets/custom_scaffold.dart';
-import '../widgets/svg_widget.dart';
-import '../widgets/title_text.dart';
+import '../widgets/my_button.dart';
+import '../widgets/my_scaffold.dart';
+import '../widgets/my_svg_widget.dart';
+import '../widgets/title_txt.dart';
 
 class RecipeDetailPage extends StatelessWidget {
   const RecipeDetailPage({
@@ -23,14 +23,14 @@ class RecipeDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
+    return MyScaffold(
       body: Stack(
         children: [
           ListView(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             children: [
-              SizedBox(height: 20 + getStatusBar(context)),
-              const TitleText('RECIPE'),
+              SizedBox(height: 20 + statusBar(context)),
+              const TitleTxt('RECIPE'),
               const SizedBox(height: 20),
               Container(
                 height: 255,
@@ -77,7 +77,7 @@ class RecipeDetailPage extends StatelessWidget {
                       child: Column(
                         children: [
                           const Spacer(),
-                          SvgWidget(
+                          MySvgWidget(
                             'assets/glass${recipe.id}.svg',
                             height: 160,
                           ),
@@ -122,15 +122,15 @@ class RecipeDetailPage extends StatelessWidget {
                   child: Row(
                     children: [
                       const SizedBox(width: 22),
-                      const SvgWidget('assets/star1.svg'),
+                      const MySvgWidget('assets/star1.svg'),
                       const SizedBox(width: 4),
-                      const SvgWidget('assets/star1.svg'),
+                      const MySvgWidget('assets/star1.svg'),
                       const SizedBox(width: 4),
-                      const SvgWidget('assets/star1.svg'),
+                      const MySvgWidget('assets/star1.svg'),
                       const SizedBox(width: 4),
-                      const SvgWidget('assets/star1.svg'),
+                      const MySvgWidget('assets/star1.svg'),
                       const SizedBox(width: 4),
-                      const SvgWidget('assets/star2.svg'),
+                      const MySvgWidget('assets/star2.svg'),
                       const SizedBox(width: 16),
                       Text(
                         recipe.rate.toString(),
@@ -186,14 +186,14 @@ class RecipeDetailPage extends StatelessWidget {
             ],
           ),
           Positioned(
-            top: 20 + getStatusBar(context),
+            top: 20 + statusBar(context),
             left: 24,
-            child: CuperButton(
+            child: MyButton(
               onPressed: () {
                 context.pop();
               },
               minSize: 34,
-              child: const SvgWidget('assets/back.svg'),
+              child: const MySvgWidget('assets/back.svg'),
             ),
           ),
         ],

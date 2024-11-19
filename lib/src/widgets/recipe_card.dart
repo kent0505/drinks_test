@@ -4,9 +4,9 @@ import 'package:go_router/go_router.dart';
 import '../core/config/fonts.dart';
 import '../core/models/recipe.dart';
 import 'arrow_right.dart';
-import 'cuper_button.dart';
+import 'my_button.dart';
 import 'custom_container.dart';
-import 'svg_widget.dart';
+import 'my_svg_widget.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard({
@@ -21,7 +21,7 @@ class RecipeCard extends StatelessWidget {
     return CustomContainer(
       height: 192,
       borderRadius: 12,
-      child: CuperButton(
+      child: MyButton(
         onPressed: () {
           context.push('/recipe', extra: recipe);
         },
@@ -59,15 +59,15 @@ class RecipeCard extends StatelessWidget {
                   Row(
                     children: [
                       const SizedBox(width: 4),
-                      const SvgWidget('assets/star1.svg'),
+                      const MySvgWidget('assets/star1.svg'),
                       const SizedBox(width: 4),
-                      const SvgWidget('assets/star1.svg'),
+                      const MySvgWidget('assets/star1.svg'),
                       const SizedBox(width: 4),
-                      const SvgWidget('assets/star1.svg'),
+                      const MySvgWidget('assets/star1.svg'),
                       const SizedBox(width: 4),
-                      const SvgWidget('assets/star1.svg'),
+                      const MySvgWidget('assets/star1.svg'),
                       const SizedBox(width: 4),
-                      const SvgWidget('assets/star2.svg'),
+                      const MySvgWidget('assets/star2.svg'),
                       const SizedBox(width: 16),
                       Text(
                         recipe.rate.toString(),
@@ -99,7 +99,7 @@ class RecipeCard extends StatelessWidget {
                 children: [
                   const SizedBox(height: 16),
                   Expanded(
-                    child: SvgWidget('assets/glass${recipe.id}.svg'),
+                    child: MySvgWidget('assets/glass${recipe.id}.svg'),
                   ),
                   const SizedBox(height: 10),
                   const ArrowRight(),
